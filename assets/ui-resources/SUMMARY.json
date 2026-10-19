@@ -1,0 +1,12 @@
+{
+  "catalog_api": "https://ui-resources.com/api/resources",
+  "catalog_final_url": "https://ui-resources.com/api/resources",
+  "catalog_last_updated": "2026-10-13",
+  "catalog_records": 1134,
+  "unique_direct_file_urls": 977,
+  "downloaded_unique_files": 977,
+  "failed_unique_files": 0,
+  "records_without_direct_file_urls": 154,
+  "total_downloaded_bytes": 377078391,
+  "total_downloaded_mib": 359.61
+}

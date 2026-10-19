@@ -1,0 +1,145 @@
+# Included visual assets
+
+This folder contains the 106 image files extracted from the user-supplied `KekUIEssentials.rar` archive: 105 PNG files and 1 WebP file (about 11.9 MB uncompressed). The files are bundled here as Claude Skill resources so Claude can inspect and use the supplied visual material when asked.
+
+## Asset families
+
+- **kek_chain** — 7 files
+- **kek_circle** — 8 files
+- **kek_circle_halftone** — 12 files
+- **kek_circle_magic** — 2 files
+- **kek_design** — 6 files
+- **kek_dirt** — 2 files
+- **kek_flame** — 6 files
+- **kek_galaxy** — 2 files
+- **kek_gunshot** — 5 files
+- **kek_light** — 3 files
+- **kek_rays** — 1 files
+- **kek_scorch** — 3 files
+- **kek_slash** — 4 files
+- **kek_smoke** — 4 files
+- **kek_spark** — 12 files
+- **kek_sparkle** — 11 files
+- **kek_speedlines** — 2 files
+- **kek_square_halftone** — 5 files
+- **kek_stud** — 1 files
+- **kek_universal** — 1 files
+- **kek_weld** — 1 files
+- **kek_zoomed_halftone** — 1 files
+- **quelly_spiral** — 7 files
+
+## Source and usage
+
+- Original source supplied by the user: `KekUIEssentials.rar`.
+- The pack includes a repeating stud surface, chains, circles, halftone patterns, rays, dirt, flames, galaxy, gunshot, lighting, scorch, slash, smoke, sparks, sparkle, speed lines, and weld/universal motifs. Inspect the actual image before selecting it; names are clues, not guaranteed semantic labels.
+- The pack did not include a license/readme. Preserve attribution and verify the asset creator terms before publishing, selling, or redistributing any of these files.
+- Keep the originals intact. Duplicate an asset before recoloring, flattening, cropping, or converting it.
+
+## File inventory
+
+- `kek_chain_1.png`
+- `kek_chain_2.png`
+- `kek_chain_3.png`
+- `kek_chain_4.png`
+- `kek_chain_5.png`
+- `kek_chain_6.png`
+- `kek_chain_7.png`
+- `kek_circle_1.png`
+- `kek_circle_2.png`
+- `kek_circle_3.png`
+- `kek_circle_4.png`
+- `kek_circle_5.png`
+- `kek_circle_6.png`
+- `kek_circle_7.png`
+- `kek_circle_8.png`
+- `kek_circle_halftone_1.png`
+- `kek_circle_halftone_10.png`
+- `kek_circle_halftone_11.png`
+- `kek_circle_halftone_12.png`
+- `kek_circle_halftone_2.png`
+- `kek_circle_halftone_3.png`
+- `kek_circle_halftone_4.png`
+- `kek_circle_halftone_5.png`
+- `kek_circle_halftone_6.png`
+- `kek_circle_halftone_7.png`
+- `kek_circle_halftone_8.png`
+- `kek_circle_halftone_9.png`
+- `kek_circle_magic_1.png`
+- `kek_circle_magic_2.png`
+- `kek_design_1.png`
+- `kek_design_2.png`
+- `kek_design_3.png`
+- `kek_design_4.png`
+- `kek_design_5.png`
+- `kek_design_6.png`
+- `kek_dirt_1.png`
+- `kek_dirt_2.png`
+- `kek_flame_1.png`
+- `kek_flame_2.png`
+- `kek_flame_3.png`
+- `kek_flame_4.png`
+- `kek_flame_5.png`
+- `kek_flame_6.png`
+- `kek_galaxy_1.png`
+- `kek_galaxy_2.png`
+- `kek_gunshot_1.png`
+- `kek_gunshot_2.png`
+- `kek_gunshot_3.png`
+- `kek_gunshot_4.png`
+- `kek_gunshot_5.png`
+- `kek_light_1.png`
+- `kek_light_2.png`
+- `kek_light_3.png`
+- `kek_rays.webp`
+- `kek_scorch_1.png`
+- `kek_scorch_2.png`
+- `kek_scorch_3.png`
+- `kek_slash_1.png`
+- `kek_slash_2.png`
+- `kek_slash_3.png`
+- `kek_slash_4.png`
+- `kek_smoke_1.png`
+- `kek_smoke_2.png`
+- `kek_smoke_3.png`
+- `kek_smoke_4.png`
+- `kek_spark_1.png`
+- `kek_spark_10.png`
+- `kek_spark_11.png`
+- `kek_spark_12.png`
+- `kek_spark_2.png`
+- `kek_spark_3.png`
+- `kek_spark_4.png`
+- `kek_spark_5.png`
+- `kek_spark_6.png`
+- `kek_spark_7.png`
+- `kek_spark_8.png`
+- `kek_spark_9.png`
+- `kek_sparkle_1.png`
+- `kek_sparkle_10.png`
+- `kek_sparkle_11.png`
+- `kek_sparkle_2.png`
+- `kek_sparkle_3.png`
+- `kek_sparkle_4.png`
+- `kek_sparkle_5.png`
+- `kek_sparkle_6.png`
+- `kek_sparkle_7.png`
+- `kek_sparkle_8.png`
+- `kek_sparkle_9.png`
+- `kek_speedlines_1.png`
+- `kek_speedlines_2.png`
+- `kek_square_halftone_1.png`
+- `kek_square_halftone_2.png`
+- `kek_square_halftone_3.png`
+- `kek_square_halftone_4.png`
+- `kek_square_halftone_5.png`
+- `kek_stud.png`
+- `kek_universal.png`
+- `kek_weld.png`
+- `kek_zoomed_halftone_1.png`
+- `quelly_spiral_1.png`
+- `quelly_spiral_2.png`
+- `quelly_spiral_3.png`
+- `quelly_spiral_4.png`
+- `quelly_spiral_5.png`
+- `quelly_spiral_6.png`
+- `quelly_spiral_7.png`
