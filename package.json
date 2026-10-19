@@ -1,0 +1,45 @@
+{
+  "name": "ui-figma-roblox",
+  "version": "1.0.0",
+  "description": "Installer for the ui-figma-roblox Agent Skill - stud-style Roblox UI design in Figma for Claude Code, OpenCode, Codex/ChatGPT, Cursor, Gemini CLI and more.",
+  "type": "module",
+  "bin": {
+    "ui-figma-roblox": "bin/ui-figma-roblox.js"
+  },
+  "files": [
+    "bin",
+    "lib",
+    "README.md",
+    "LICENSE",
+    "ATTRIBUTION.md"
+  ],
+  "engines": {
+    "node": ">=18"
+  },
+  "dependencies": {
+    "tar": "^7.5.22"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/grim-technologies-arch/ui-figma-roblox.git"
+  },
+  "homepage": "https://github.com/grim-technologies-arch/ui-figma-roblox#readme",
+  "bugs": {
+    "url": "https://github.com/grim-technologies-arch/ui-figma-roblox/issues"
+  },
+  "keywords": [
+    "agent-skill",
+    "claude-code",
+    "opencode",
+    "codex",
+    "chatgpt",
+    "cursor",
+    "gemini-cli",
+    "roblox",
+    "figma",
+    "ui",
+    "skill",
+    "installer"
+  ],
+  "license": "MIT"
+}

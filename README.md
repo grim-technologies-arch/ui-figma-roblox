@@ -12,26 +12,78 @@ An agent skill for designing **Roblox stud-style UI in Figma** — layered panel
 - Includes worked Figma scripts, a Roblox `ScreenGui` builder, and hard-won notes on porting Figma effects to Roblox.
 - Keeps you honest about deliverable claims: mockup vs. exported assets vs. verified Studio implementation.
 
-## Quick start
+## Install
 
-### Requirements
+### npx (recommended)
 
-- An agent that supports **Agent Skills** (Claude Code, Claude.ai skills, opencode, etc.).
-- A **Figma MCP server** connected to your agent if you want the skill to build in Figma.
-  When the Figma MCP is available, load the `figma:figma-use` skill before any `use_figma` call (and `figma:figma-generate-design` for full screens).
-- Optional: **Roblox Studio MCP** for the Figma → Roblox port.
+```bash
+npx ui-figma-roblox
+```
 
-### Install
+The installer detects which AI agents are actually installed on your machine, shows only those, and asks where to put the skill. It supports Claude Code, OpenCode, Codex / ChatGPT desktop, Cursor, Gemini CLI, Cline, Windsurf, GitHub Copilot and [more](#supported-agents).
 
-Clone into your personal skills directory:
+Until the npm package is published, run it straight from GitHub:
+
+```bash
+npx github:grim-technologies-arch/ui-figma-roblox
+```
+
+Non-interactive examples:
+
+```bash
+npx ui-figma-roblox --target claude --yes
+npx ui-figma-roblox --target claude,opencode,codex
+npx ui-figma-roblox --dir ~/.agents/skills --yes
+npx ui-figma-roblox --project --target claude
+```
+
+| Flag | What it does |
+| --- | --- |
+| `-l, --list` | Show detected agents and their install paths |
+| `-a, --all` | Show or install every supported agent |
+| `-t, --target <ids>` | Install to specific agent ids, comma-separated |
+| `--dir <path>` | Install into a custom skills folder |
+| `--project` | Install into the current project instead of globally |
+| `-f, --force` | Overwrite an existing install |
+| `-y, --yes` | Do not prompt |
+| `--source <path>` | Install from a local clone instead of downloading |
+| `-h, --help` | Show all options |
+
+The npm package is a small installer. It downloads the full skill bundle, including the art libraries, from this repository's GitHub Releases. Node 18 or newer is required.
+
+### Manual install
 
 ```bash
 git clone https://github.com/grim-technologies-arch/ui-figma-roblox.git ~/.claude/skills/ui-figma-roblox
 ```
 
-Or vendor it into a project with `.claude/skills/ui-figma-roblox/`.
+Or vendor it into a project with `.claude/skills/ui-figma-roblox/`. For other agents, clone it into that agent's skills folder (for example `~/.config/opencode/skills/ui-figma-roblox/` or `~/.agents/skills/ui-figma-roblox/`).
 
-For other agents, clone it into that agent's skills folder (for example `~/.config/opencode/skills/ui-figma-roblox/`).
+### Supported agents
+
+| Agent | Global skills folder |
+| --- | --- |
+| Claude Code | `~/.claude/skills/` |
+| OpenCode | `~/.config/opencode/skills/` |
+| Codex / ChatGPT desktop | `~/.agents/skills/` |
+| Cursor | `~/.cursor/skills/` |
+| Gemini CLI | `~/.gemini/skills/` |
+| Cline | `~/.agents/skills/` |
+| Windsurf | `~/.codeium/windsurf/skills/` |
+| GitHub Copilot | `~/.copilot/skills/` |
+| Goose, Continue, Roo Code, OpenHands, Amp, Kimi, Antigravity, Augment, OpenClaw, CodeBuddy, Crush, Droid, Junie, Kilo Code, Kiro, Qwen, Trae | Run `npx ui-figma-roblox --list --all` for exact paths |
+
+`~/.agents/skills/` is used by Codex, Cline and several other tools, so one install there can serve more than one agent. The installer de-duplicates shared destinations.
+
+> The ChatGPT web app does not read local skill folders; use the ChatGPT desktop app or Codex CLI, which read `~/.agents/skills/`.
+
+### Requirements
+
+- An agent that supports **Agent Skills** (Claude Code, Codex, OpenCode, Cursor, Gemini CLI, etc.).
+- **Node 18+** for the npx installer.
+- A **Figma MCP server** connected to your agent if you want the skill to build in Figma.
+  When the Figma MCP is available, load the `figma:figma-use` skill before any `use_figma` call (and `figma:figma-generate-design` for full screens).
+- Optional: **Roblox Studio MCP** for the Figma → Roblox port.
 
 ### Use it
 
@@ -58,6 +110,8 @@ The agent reads `SKILL.md`, then the reference files it needs. You do not have t
 | `assets/kek-ui-essentials/` | 106 Kek UI Essentials images (studs, halftones, rays, sparks, chains, flames, smoke, slashes). |
 | `assets/ui-resources/` | 975-file UI Resources capture with `MANIFEST.csv`, link-only catalog, and raw catalog JSON. |
 | `examples/stud-shop/` | The full worked example: reference image, rejected attempt, final Figma renders, Figma scripts, Roblox builder, and lessons learned. |
+| `bin/` + `lib/` | Cross-platform npx installer with agent detection, interactive selection, and safe updates. |
+| `package.json` | npm package metadata for `npx ui-figma-roblox`. |
 
 ## Bundled asset libraries
 
@@ -135,6 +189,35 @@ Start with [examples/stud-shop/README.md](examples/stud-shop/README.md).
 - Details, sources, and takedown process: [ATTRIBUTION.md](ATTRIBUTION.md).
 
 If you are a rights holder and want an asset removed, open an issue and it will be removed promptly.
+
+## Publishing (maintainers)
+
+The npm package is deliberately small: npm rejects tarballs over roughly 100 MB, so the 315 MB art library lives in a GitHub Release asset and the installer downloads it.
+
+```bash
+# 1. Bump the version in package.json, then tag and push
+git tag v1.0.0
+git push origin v1.0.0
+
+# 2. Build the full skill bundle (folder root is ui-figma-roblox/)
+mkdir -p /tmp/ufr-release/ui-figma-roblox
+cp -R SKILL.md README.md LICENSE ATTRIBUTION.md references assets examples /tmp/ufr-release/ui-figma-roblox/
+tar -czf ui-figma-roblox-skill-v1.0.0.tar.gz -C /tmp/ufr-release ui-figma-roblox
+
+# 3. Attach it to the GitHub release
+gh release create v1.0.0 ui-figma-roblox-skill-v1.0.0.tar.gz --title v1.0.0 --notes "Initial release"
+
+# 4. Publish the installer
+npm login
+npm publish
+```
+
+Test locally before publishing:
+
+```bash
+node bin/ui-figma-roblox.js --list
+node bin/ui-figma-roblox.js --source . --dir /tmp/ufr-test --yes --force
+```
 
 ## Credits
 
